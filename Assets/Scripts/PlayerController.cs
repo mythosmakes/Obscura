@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
-    private int shardsCollected = 0;
+    public int ShardsCollected { get; private set; }
 
     public GameObject mirrorShard1;
     public GameObject mirrorShard2;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
         mirrorShard3.SetActive(false);
+
+        ShardsCollected = 0;
     }
 
     // Update is called once per frame
@@ -28,12 +31,17 @@ public class PlayerController : MonoBehaviour
         Vector3 moveVector = new Vector3(-inputY, 0, inputX) * movementSpeed * Time.deltaTime;
 
         transform.Translate(moveVector);
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Pickups");
+        }
     }
 
-    public void UpdateShards()
+    public void UpdateShards(int amount)
     {
-        shardsCollected++;
-        switch (shardsCollected)
+        ShardsCollected += amount;
+        switch (ShardsCollected)
         {
             case 1:
                 mirrorShard1.SetActive(true);
@@ -49,6 +57,11 @@ public class PlayerController : MonoBehaviour
                 mirrorShard1.SetActive(true);
                 mirrorShard2.SetActive(true);
                 mirrorShard3.SetActive(true);
+                break;
+            default:
+                mirrorShard1.SetActive(false);
+                mirrorShard2.SetActive(false);
+                mirrorShard3.SetActive(false);
                 break;
         }
 
