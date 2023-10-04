@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         // Simple controls to get player moving, delete later for touch controls
         var inputX = Input.GetAxis("Horizontal");
         var inputY = Input.GetAxis("Vertical");
-        Vector3 moveVector = new Vector3(-inputY, 0, inputX) * movementSpeed * Time.deltaTime;
+        Vector3 moveVector = new Vector3(-inputY * inputX, 0, inputX * inputY) * movementSpeed * Time.deltaTime;
 
         transform.Translate(moveVector);
     }
