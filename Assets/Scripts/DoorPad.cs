@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class DoorPad : MonoBehaviour
 {
-    //public Door doorReference;
     private CurrencyManager currencyManager;
     [SerializeField] int shardsNeededToUnlock;
     [SerializeField] int coinRewardAmount;
