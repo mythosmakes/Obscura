@@ -52,13 +52,18 @@ public class CurrencyShop : MonoBehaviour
         {
             playerMoney -= cost;
             moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
-            coins += addedCoins;
-            coinsText.text = coins.ToString();
+            RewardCoins(addedCoins);
         }
         else
         {
             Debug.Log("Insufficient Funds!");
         }
+    }
+
+    public void RewardCoins(int rewardCoins)
+    {
+        coins += rewardCoins;
+        coinsText.text = coins.ToString();
     }
 
     public void AddMoney()

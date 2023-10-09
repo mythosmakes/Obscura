@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
-    private int shardsCollected = 0;
+    public int shardsCollected = 0;
 
     public GameObject mirrorShard1;
     public GameObject mirrorShard2;
@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour
         characterController.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f) * Time.deltaTime); //move player
     }
 
-    public void UpdateShards()
+    public void UpdateShards(int shards)
     {
-        shardsCollected++;
+        shardsCollected += shards;
         switch (shardsCollected)
         {
             case 1:
