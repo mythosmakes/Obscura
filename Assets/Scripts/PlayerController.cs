@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
             targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + 45;
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, turningTime);
             transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-            Debug.Log("Move input!");
         }
         Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
         characterVelocity = targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f);
