@@ -1,66 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
-    private int shardsCollected = 0;
+    public int ShardsCollected { get; private set; }
 
     public GameObject mirrorShard1;
     public GameObject mirrorShard2;
     public GameObject mirrorShard3;
-    
-    CharacterController characterController;
-    private InputManager input;
-    private PlayerInput playerInput;
 
-    public float moveSpeed;
-    private float targetRotation = 0.0f;
-    private float verticalSpeed;
-    private Vector3 characterVelocity;
-    private float rotationVelocity;
-    [Range(0.0f, 0.3f)]
-    public float turningTime = 0.12f;
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>(); // get character controller
-        input = GetComponent<InputManager>();
-        playerInput = GetComponent<PlayerInput>();
-        
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
         mirrorShard3.SetActive(false);
+
+        ShardsCollected = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Simple controls to get player moving, delete later for touch controls
-        float targetSpeed = moveSpeed;
-        if (input.move == Vector2.zero) targetSpeed = 0.0f;
-        float currentSpeed = new Vector3(characterController.velocity.x, 0.0f, characterController.velocity.z).magnitude;
-        float inputMagnitude = input.move.magnitude; //if using analog stick, scale with input. Else, magnitude is 1f
+        var inputX = Input.GetAxis("Horizontal");
+        var inputY = Input.GetAxis("Vertical");
+        Vector3 moveVector = new Vector3(-inputY, 0, inputX) * movementSpeed * Time.deltaTime;
 
-        Vector3 inputDirection = new Vector3(input.move.x, 0.0f, input.move.y).normalized;
-        if (input.move != Vector2.zero)
+        transform.Translate(moveVector);
+
+        if(Input.GetKeyDown(KeyCode.R))
         {
-            targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + 45;
-            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, turningTime);
-            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-            Debug.Log("Move input!");
+            SceneManager.LoadScene("Pickups");
         }
-        Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
-        characterVelocity = targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f);
-        characterController.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f) * Time.deltaTime); //move player
     }
 
-    public void UpdateShards()
+    public void UpdateShards(int amount)
     {
-        shardsCollected++;
-        switch (shardsCollected)
+        ShardsCollected += amount;
+        switch (ShardsCollected)
         {
             case 1:
                 mirrorShard1.SetActive(true);
@@ -76,6 +57,11 @@ public class PlayerController : MonoBehaviour
                 mirrorShard1.SetActive(true);
                 mirrorShard2.SetActive(true);
                 mirrorShard3.SetActive(true);
+                break;
+            default:
+                mirrorShard1.SetActive(false);
+                mirrorShard2.SetActive(false);
+                mirrorShard3.SetActive(false);
                 break;
         }
 
