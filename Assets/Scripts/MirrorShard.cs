@@ -8,7 +8,7 @@ public class MirrorShard : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") == true)
         {
-            other.gameObject.GetComponent<PlayerController>().UpdateShards();
+            other.gameObject.GetComponent<PlayerController>().UpdateShards(1);
             gameObject.SetActive(false);
         }
         
