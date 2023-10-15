@@ -9,15 +9,17 @@ public class CurrencyShop : MonoBehaviour
     public GameObject gameUI;
     public Text coinsText;
     public Text moneyText;
-    private int coins;
+    private int coins = 0;
     private float cost;
     private float playerMoney;
+    public float Coins { get { return coins; } }
 
     void Start()
     {
         gameUI.SetActive(true);
         shopUI.SetActive(false);
         moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
+        coins = 0;
         coinsText.text = coins.ToString();
     }
 
@@ -70,5 +72,11 @@ public class CurrencyShop : MonoBehaviour
     {
         playerMoney += .10f;
         moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
+    }
+
+    public void SpendCoins(int amount)
+    {
+        coins -= amount;
+        coinsText.text = coins.ToString();
     }
 }

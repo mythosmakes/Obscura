@@ -9,17 +9,20 @@ public class DoorPad : MonoBehaviour
     public int coinReward;
     public CurrencyShop currencyShop;
 
-    [SerializeField] UnityEvent onActivate;
+    private bool activated = false;
+    public UnityEvent onActivate;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<PlayerController> (out PlayerController playerController) == true)
         {
-            if (playerController.shardsCollected == shardsNeeded)
+            if (playerController.shardsCollected >= shardsNeeded && activated == false)
             {
                 playerController.UpdateShards(-shardsNeeded);
                 currencyShop.RewardCoins(coinReward);
-                onActivate.Invoke ();
+                Debug.Log("From DoorPad: " + currencyShop.Coins);
+                onActivate.Invoke();
+                activated = true;
             }
         }
     }
