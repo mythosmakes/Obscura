@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,15 +29,13 @@ public class PlayerController : MonoBehaviour
     public float turningTime = 0.12f;
 
     public int corruption = 0;
-    public Vector3 levelStartPosition;
+    public Text corruptionText;
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>(); // get character controller
         input = GetComponent<InputManager>();
         playerInput = GetComponent<PlayerInput>();
-
-        levelStartPosition = transform.position;
         
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
@@ -97,6 +96,7 @@ public class PlayerController : MonoBehaviour
     public void CorruptionEffect()
     {
         corruption += 1;
+        corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {
             levelFailUI.SetActive(true);
