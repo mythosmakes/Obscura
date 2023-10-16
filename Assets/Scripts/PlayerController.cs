@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public GameObject mirrorShard1;
     public GameObject mirrorShard2;
     public GameObject mirrorShard3;
+
+    public GameObject levelFailUI;
     
     CharacterController characterController;
     private InputManager input;
@@ -24,11 +27,16 @@ public class PlayerController : MonoBehaviour
     [Range(0.0f, 0.3f)]
     public float turningTime = 0.12f;
 
+    public int corruption = 0;
+    public Vector3 levelStartPosition;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>(); // get character controller
         input = GetComponent<InputManager>();
         playerInput = GetComponent<PlayerInput>();
+
+        levelStartPosition = transform.position;
         
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
@@ -84,5 +92,16 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void CorruptionEffect()
+    {
+        corruption += 1;
+        if(corruption >= 3)
+        {
+            levelFailUI.SetActive(true);
+            Destroy(this);
+        }
+        Debug.Log("Corruption level: " + corruption);
     }
 }

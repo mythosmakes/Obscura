@@ -7,6 +7,6 @@ public class TemporaryReload : MonoBehaviour
 {
     public void Reload()
     {
-        SceneManager.LoadScene("Mockup");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
