@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public GameObject mirrorShard1;
     public GameObject mirrorShard2;
     public GameObject mirrorShard3;
+
+    public GameObject levelFailUI;
     
     CharacterController characterController;
     private InputManager input;
@@ -23,6 +27,9 @@ public class PlayerController : MonoBehaviour
     private float rotationVelocity;
     [Range(0.0f, 0.3f)]
     public float turningTime = 0.12f;
+
+    public int corruption = 0;
+    public Text corruptionText;
 
     private void Start()
     {
@@ -84,5 +91,17 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void CorruptionEffect()
+    {
+        corruption += 1;
+        corruptionText.text = "Health: " + (3 - corruption);
+        if(corruption >= 3)
+        {
+            levelFailUI.SetActive(true);
+            Destroy(this);
+        }
+        Debug.Log("Corruption level: " + corruption);
     }
 }

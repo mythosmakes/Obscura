@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mockup.unity
     guid: af686228a355d744091a70d6d7fb83c4
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 9ed5a36e9677176468e9071a6501c851, type: 2}
