@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,11 +13,14 @@ public class PlayerController : MonoBehaviour
     public GameObject mirrorShard1;
     public GameObject mirrorShard2;
     public GameObject mirrorShard3;
+
+    public GameObject levelFailUI;
     
     CharacterController characterController;
     private InputManager input;
     private PlayerInput playerInput;
 
+    public float defaultMoveSpeed;
     public float moveSpeed;
     private float targetRotation = 0.0f;
     private float verticalSpeed;
@@ -23,6 +28,9 @@ public class PlayerController : MonoBehaviour
     private float rotationVelocity;
     [Range(0.0f, 0.3f)]
     public float turningTime = 0.12f;
+
+    public int corruption = 0;
+    public Text corruptionText;
 
     private void Start()
     {
@@ -33,6 +41,8 @@ public class PlayerController : MonoBehaviour
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
         mirrorShard3.SetActive(false);
+
+        defaultMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -84,5 +94,27 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void CorruptionEffect()
+    {
+        corruption += 1;
+        corruptionText.text = "Health: " + (3 - corruption);
+        if(corruption >= 3)
+        {
+            levelFailUI.SetActive(true);
+            Destroy(this);
+        }
+        Debug.Log("Corruption level: " + corruption);
+    }
+
+    public void SlowEffect()
+    {
+        moveSpeed /= 2;
+    }
+
+    public void ResetSpeed()
+    {
+        moveSpeed = defaultMoveSpeed;
     }
 }
