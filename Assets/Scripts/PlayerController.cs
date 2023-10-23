@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private InputManager input;
     private PlayerInput playerInput;
 
+    public float defaultMoveSpeed;
     public float moveSpeed;
     private float targetRotation = 0.0f;
     private float verticalSpeed;
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
         mirrorShard3.SetActive(false);
+
+        defaultMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -103,5 +106,15 @@ public class PlayerController : MonoBehaviour
             Destroy(this);
         }
         Debug.Log("Corruption level: " + corruption);
+    }
+
+    public void SlowEffect()
+    {
+        moveSpeed /= 2;
+    }
+
+    public void ResetSpeed()
+    {
+        moveSpeed = defaultMoveSpeed;
     }
 }
