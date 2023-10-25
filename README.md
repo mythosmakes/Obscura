@@ -1,5 +1,5 @@
 # Obscura
-_Current Version: 1.3_
+_Current Version: 1.4_
 
 Obscura is a casual puzzle game that focuses on making you think outside the box and question if you can believe what you see.
 The goal is to get out of the mirror dimension by solving puzzles. 
@@ -13,7 +13,27 @@ However, if you fail too many times, you are claimed by the Puppetmaster and bec
 > _Quit Game:_ Escape
 
 **How To Play**
-> You move around the world and collect mirror shards to escape the realm. There are environmental hazards that will corrupt you.
+> You move around the world and collect mirror shards to escape the realm. There are environmental hazards that will slow or corrupt you.
+
+### Release Notes for Version 1.4
+
+**New Feature(s)**
+> _Puzzles:_ Added level blockouts.
+
+**Feature Changes**
+> _Level Select:_ More levels are available in the menu.
+
+**Known Bugs/Issues**
+- Brief burst of speed between slow areas
+- Player texture not displaying
+- All obstacles damage player in third level
+
+**All Completed Features**
+1. "Key" Pickups - Mirror Shards
+> Collecting the shards in each section will give you floating motes above your head.
+> When all have been collected, you can open the door at the end of the level.
+2. Store Purchases - Coins
+> Players can purchase and then spend coins within the shop to acquire Shards if they desire. This is accessible in-game and at the end of a level.
 
 ### Release Notes for Version 1.3
 
