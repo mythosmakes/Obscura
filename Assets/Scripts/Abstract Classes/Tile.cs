@@ -2,9 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Tile : MonoBehaviour
+public class Tile : MonoBehaviour
 {
-    public abstract void Activate(PlayerController playerController);
+    [SerializeField] Material defaultMaterial;
+    [SerializeField] Material alternateMaterial;
+    private MeshRenderer meshRenderer;
 
-    public abstract void Deactivate();
+    private void Awake()
+    {
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
+
+    public virtual void Activate(PlayerController playerController) 
+    {
+        meshRenderer.material = alternateMaterial;
+    }
+
+    public virtual void Deactivate()
+    { 
+        meshRenderer.material = defaultMaterial;
+    }
 }

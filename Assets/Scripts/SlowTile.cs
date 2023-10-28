@@ -10,6 +10,7 @@ public class SlowTile : Tile
 
     public override void Activate(PlayerController player)
     {
+        base.Activate(player);
         playerController = player;
         if(active == false)
         {
