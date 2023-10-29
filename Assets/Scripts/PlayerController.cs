@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject groundCast;
+    private Tile currentTile;
     [SerializeField] private float movementSpeed;
     public int shardsCollected = 0;
 
@@ -70,6 +73,22 @@ public class PlayerController : MonoBehaviour
         Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
         characterVelocity = targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f);
         characterController.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f) * Time.deltaTime); //move player
+
+        // Raycast for tile activation without collision
+        RaycastHit hit;
+        if(Physics.Raycast(groundCast.transform.position, Vector3.down, out hit, 5.0f) )
+        {
+            if(hit.collider.gameObject.TryGetComponent<Tile>(out Tile tile))
+            {
+                if(tile != currentTile && currentTile != null)
+                {
+                    currentTile.Deactivate();
+                }
+                currentTile = tile;
+                tile.Activate(this);
+            }
+        }
+
     }
 
     public void UpdateShards(int shards)
@@ -108,9 +127,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Corruption level: " + corruption);
     }
 
-    public void SlowEffect()
+    public void Slow(float divisor)
     {
-        moveSpeed /= 2;
+        moveSpeed /= divisor;
     }
 
     public void ResetSpeed()

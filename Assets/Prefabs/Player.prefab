@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &514688853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514688854}
+  m_Layer: 0
+  m_Name: GroundCast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514688854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514688853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2653001356331997814}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2653001354856525896
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +452,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5462433349390380005}
+  - {fileID: 514688854}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -518,12 +550,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e209e2f506227a245918dbe54284b6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCast: {fileID: 514688853}
   movementSpeed: 10
+  shardsCollected: 0
   mirrorShard1: {fileID: 2653001355992998749}
   mirrorShard2: {fileID: 2653001355498185833}
   mirrorShard3: {fileID: 2653001354856525896}
-  moveSpeed: 10
+  levelFailUI: {fileID: 0}
+  defaultMoveSpeed: 0
+  moveSpeed: 5
   turningTime: 0.12
+  corruption: 0
+  corruptionText: {fileID: 0}
 --- !u!114 &2956067817294581590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0}
+  exit: 0
 --- !u!114 &9143475857805116483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +684,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 49046303f86487c4fa4eb3cbc6c5d45a,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 49046303f86487c4fa4eb3cbc6c5d45a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a64db00499fdaa4fa363378c9c995c2, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 49046303f86487c4fa4eb3cbc6c5d45a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1efca90c6413c54ab00bf80254551c0, type: 2}
     - target: {fileID: 919132149155446097, guid: 49046303f86487c4fa4eb3cbc6c5d45a,
         type: 3}
       propertyPath: m_Name
