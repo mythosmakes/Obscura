@@ -622,7 +622,7 @@ RectTransform:
   m_Children:
   - {fileID: 773730855}
   m_Father: {fileID: 1864130663}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -833,6 +833,11 @@ PrefabInstance:
       propertyPath: corruptionText
       value: 
       objectReference: {fileID: 773730856}
+    - target: {fileID: 2653001356331997812, guid: 2eb9605c80b66ec4c90d2f205771245f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bbd99f56e261f0845a5b5284afa956a9, type: 2}
     - target: {fileID: 2653001356331997814, guid: 2eb9605c80b66ec4c90d2f205771245f,
         type: 3}
       propertyPath: m_RootOrder
