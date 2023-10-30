@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 2653001356331997809}
   - component: {fileID: 2956067817294581590}
   - component: {fileID: 9143475857805116483}
+  - component: {fileID: 1129568045796777105}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -551,6 +552,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCast: {fileID: 514688853}
+  clickableLayers:
+    serializedVersion: 2
+    m_Bits: 64
   movementSpeed: 10
   shardsCollected: 0
   mirrorShard1: {fileID: 2653001355992998749}
@@ -576,6 +580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0}
   exit: 0
+  click: 0
 --- !u!114 &9143475857805116483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,6 +612,28 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!195 &1129568045796777105
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653001356331997802}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 240
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &5495745378560265230
 PrefabInstance:
   m_ObjectHideFlags: 0
