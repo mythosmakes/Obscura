@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
+    [SerializeField] LayerMask clickableLayers;
     public int shardsCollected = 0;
 
     public GameObject mirrorShard1;
@@ -19,10 +20,10 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
     private InputManager input;
     private PlayerInput playerInput;
+    private UnityEngine.AI.NavMeshAgent agent;
 
     public float defaultMoveSpeed;
     public float moveSpeed;
-    private float targetRotation = 0.0f;
     private float verticalSpeed;
     private Vector3 characterVelocity;
     private float rotationVelocity;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>(); // get character controller
         input = GetComponent<InputManager>();
         playerInput = GetComponent<PlayerInput>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
@@ -48,28 +50,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Simple controls to get player moving, delete later for touch controls
-        float targetSpeed = moveSpeed;
-        if (input.move == Vector2.zero) targetSpeed = 0.0f;
-        float currentSpeed = new Vector3(characterController.velocity.x, 0.0f, characterController.velocity.z).magnitude;
-        float inputMagnitude = input.move.magnitude; //if using analog stick, scale with input. Else, magnitude is 1f
 
         Vector3 inputDirection = new Vector3(input.move.x, 0.0f, input.move.y).normalized;
-        if (input.move != Vector2.zero)
+        if (Input.touchCount > 0)
         {
-            targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + 45;
+            Touch touch = Input.GetTouch(0);
+            
+            RaycastHit hit;
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(touch.position), out hit, 1000, clickableLayers))
+            {
+                agent.destination = hit.point;
+            }
+            /*targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + 45;
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, turningTime);
-            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);*/
+        }
+        if(input.click == true)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000, clickableLayers))
+            {
+                agent.destination = hit.point;
+            }
         }
 
         if(input.exit)
         {
             Application.Quit();
         }
-
-        Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
-        characterVelocity = targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f);
-        characterController.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + new Vector3(0.0f, verticalSpeed, 0.0f) * Time.deltaTime); //move player
     }
 
     public void UpdateShards(int shards)
