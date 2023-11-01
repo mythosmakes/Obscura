@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6534425531895693953}
   - component: {fileID: 6534425531895693952}
   - component: {fileID: 6534425531895693955}
+  - component: {fileID: 1131007344894559984}
   m_Layer: 0
   m_Name: SlowDownHazard
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3889071084c93b740bfb8774fd6c4162, type: 2}
+  - {fileID: 2100000, guid: dd500ae42bf0fdc49b61c0fd8ddfe9cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,3 +111,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c637723755fe94a859229fd979a715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1131007344894559984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534425531895693954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66da51b32369d1d428873ba096007f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: dd500ae42bf0fdc49b61c0fd8ddfe9cf, type: 2}
+  alternateMaterial: {fileID: 2100000, guid: 25f196eaf9792d24bad3b193e81dbf77, type: 2}
+  slowAmount: 2
