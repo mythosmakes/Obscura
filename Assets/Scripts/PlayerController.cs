@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<InputManager>();
         playerInput = GetComponent<PlayerInput>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        Time.timeScale = 1;
         
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);

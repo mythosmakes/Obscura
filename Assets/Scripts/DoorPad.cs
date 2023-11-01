@@ -18,6 +18,7 @@ public class DoorPad : MonoBehaviour
         {
             if (playerController.shardsCollected >= shardsNeeded && activated == false)
             {
+                Time.timeScale = 0;
                 playerController.UpdateShards(-shardsNeeded);
                 currencyShop.RewardCoins(coinReward);
                 Debug.Log("From DoorPad: " + currencyShop.Coins);
