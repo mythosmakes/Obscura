@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class HazardController : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    var playerController = other.GetComponent<PlayerController>();
+    //    {
+    //        if(playerController != null)
+    //        {
+    //            playerController.CorruptionEffect();
+    //        }
+    //    }
+    //}
+
+    // New corruption effect trigger using collisions
+
+    private void OnCollisionEnter(Collision collision)
     {
-        var playerController = other.GetComponent<PlayerController>();
+        if(collision.gameObject.TryGetComponent<PlayerController>(out var playerController))
         {
-            if(playerController != null)
-            {
-                playerController.CorruptionEffect();
-            }
+            playerController.CorruptionEffect();
         }
     }
 }
