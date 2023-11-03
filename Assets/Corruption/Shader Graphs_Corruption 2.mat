@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8302489162899008382
+--- !u!114 &-2960391949554550550
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glass
-  m_Shader: {fileID: -6465566751694194690, guid: 4f2e4d2b8c6c38747bdf173b167017ef,
+  m_Name: Shader Graphs_Corruption 2
+  m_Shader: {fileID: -6465566751694194690, guid: f97fe5f5f2912244cb4c8fdf8d06a9b2,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -52,11 +52,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Height: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Tiling: 0
-    - _Width: 1
-    - _alpha_clip: 1
     m_Colors: []
   m_BuildTextureStacks: []
