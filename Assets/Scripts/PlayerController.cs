@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+//using UnityEngine.WSA;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject groundCast;
     [SerializeField] LayerMask clickableLayers;
     private Tile currentTile;
+    [SerializeField] private float fallSpeed;
     [SerializeField] private float movementSpeed;
     public int shardsCollected = 0;
 
@@ -55,12 +57,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            
+
             RaycastHit clickTarget;
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(touch.position), out clickTarget, 1000, clickableLayers))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(touch.position), out clickTarget, 1000, clickableLayers))
             {
                 agent.destination = clickTarget.point;
             }
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, turningTime);
             transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);*/
         }
-        if(input.click == true)
+        if (input.click == true)
         {
             RaycastHit clickTarget;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out clickTarget, 1000, clickableLayers))
@@ -78,20 +81,23 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(input.exit)
+        if (input.exit)
         {
             Application.Quit();
         }
 
         Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
-        
+    }
+
+    private void FixedUpdate()
+    {
         // Raycast for tile activation without collision
         RaycastHit hit;
-        if(Physics.Raycast(groundCast.transform.position, Vector3.down, out hit, 5.0f) )
+        if (Physics.Raycast(groundCast.transform.position, Vector3.down, out hit, 5.0f))
         {
-            if(hit.collider.gameObject.TryGetComponent<Tile>(out Tile tile))
+            if (hit.collider.gameObject.TryGetComponent<Tile>(out Tile tile))
             {
-                if(tile != currentTile && currentTile != null)
+                if (tile != currentTile && currentTile != null)
                 {
                     currentTile.Deactivate();
                 }
@@ -101,7 +107,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
     public void UpdateShards(int shards)
     {
         shardsCollected += shards;
