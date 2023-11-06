@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: be343dd507b152b4283471a228e6a6d4, type: 2}
+--- !u!1 &22038901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6101371321036140270, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+    type: 3}
+  m_PrefabInstance: {fileID: 519273473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &32539832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,7 +403,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currencyShop
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 661987018}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: shardsNeeded
@@ -437,7 +443,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 22038901}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
