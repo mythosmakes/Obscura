@@ -13,6 +13,7 @@ public class DamageTile : Tile
         {
             active = true;
             playerController.CorruptionEffect();
+            gameObject.SetActive(false);
         }
     }
     public override void Deactivate()

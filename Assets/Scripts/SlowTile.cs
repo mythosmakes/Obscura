@@ -14,6 +14,7 @@ public class SlowTile : Tile
         playerController = player;
         if(active == false)
         {
+            Debug.Log("activated slow tile");
             active = true;
             playerController.Slow(slowAmount);
         }
@@ -22,6 +23,7 @@ public class SlowTile : Tile
 
     public override void Deactivate()
     {
+        Debug.Log("deactivated slow tile");
         playerController.ResetSpeed();
         active = false;
     }
