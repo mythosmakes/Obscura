@@ -9,7 +9,7 @@ However, if you fail too many times, you are claimed by the Puppetmaster and bec
 > Obscura is currently PC-compatible.
 
 **Controls** 
-> _Movement:_ On-screen joy-con |
+> _Movement:_ On-screen joy-con | 
 > _Quit Game:_ Escape
 
 **How To Play**
