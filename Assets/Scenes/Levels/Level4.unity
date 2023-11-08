@@ -1908,12 +1908,12 @@ PrefabInstance:
         type: 3}
       propertyPath: levelFailUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1713410522}
     - target: {fileID: 2653001356331997809, guid: 2eb9605c80b66ec4c90d2f205771245f,
         type: 3}
       propertyPath: corruptionText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 59989829}
     - target: {fileID: 2653001356331997812, guid: 2eb9605c80b66ec4c90d2f205771245f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4242,6 +4242,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1f16dde5d53efa439a11aa1eba374ba, type: 3}
+--- !u!1 &1713410522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4269999973890012803, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+    type: 3}
+  m_PrefabInstance: {fileID: 970060517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1722599394
 GameObject:
   m_ObjectHideFlags: 0
