@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class SlowHazardController : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private float slowAmount; // default player speed is divided by this number when slowed
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.TryGetComponent<PlayerController>(out PlayerController player))
+        if (collision.gameObject.TryGetComponent<PlayerController>(out var playerController))
         {
-            player.SlowEffect();
+            playerController.CorruptionEffect();
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        if (other.gameObject.TryGetComponent<PlayerController>(out PlayerController player))
+        if (collision.gameObject.TryGetComponent<PlayerController>(out var playerController))
         {
-            player.ResetSpeed();
+            playerController.ResetSpeed();
         }
     }
 }
