@@ -6,9 +6,9 @@ public class MirrorShard : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") == true)
+        if (other.gameObject.TryGetComponent<PlayerController>(out PlayerController player))
         {
-            other.gameObject.GetComponent<PlayerController>().UpdateShards(1);
+            player.UpdateShards(1);
             gameObject.SetActive(false);
         }
         
