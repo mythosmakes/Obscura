@@ -11,10 +11,7 @@ GameObject:
   - component: {fileID: 1147575219163450781}
   - component: {fileID: 1147575219163450780}
   - component: {fileID: 1147575219163450783}
-  - component: {fileID: 1147575219163450771}
-  - component: {fileID: 1147575219163450782}
   - component: {fileID: 1147575219163450777}
-  - component: {fileID: 1147575219163450770}
   m_Layer: 0
   m_Name: Mirror Shard Pickup
   m_TagString: Untagged
@@ -31,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1147575219163450776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.73, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147575219163450776}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 1500138650670271526, guid: 8f22dd9b1e903f5489c47ee665e4d34a, type: 3}
 --- !u!23 &1147575219163450783
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87,35 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1147575219163450771
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147575219163450776}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 14
-  m_CollisionDetection: 0
---- !u!65 &1147575219163450782
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147575219163450776}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1147575219163450777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,16 +98,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 20
   rotationDirection: {x: 1, y: 2, z: 1}
---- !u!114 &1147575219163450770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147575219163450776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 213cb4a368a4dd84aa00c7bdacf8bf53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rewardAmount: 1
