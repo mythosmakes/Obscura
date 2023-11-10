@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class DoorPad : MonoBehaviour
 {
@@ -19,9 +20,10 @@ public class DoorPad : MonoBehaviour
             if (playerController.shardsCollected >= shardsNeeded && activated == false)
             {
                 Time.timeScale = 0;
+                SaveManager.Instance.SaveData(playerController.shardsCollected, SceneManager.GetActiveScene().buildIndex, (int)currencyShop.Coins);
                 playerController.UpdateShards(-shardsNeeded);
                 currencyShop.RewardCoins(coinReward);
-                Debug.Log("From DoorPad: " + currencyShop.Coins);
+                //Debug.Log("From DoorPad: " + currencyShop.Coins);
                 onActivate.Invoke();
                 activated = true;
             }

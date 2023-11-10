@@ -11,7 +11,7 @@ public class CurrencyShop : MonoBehaviour
     public Text moneyText;
     private int coins = 0;
     private float cost;
-    private float playerMoney;
+    public float playerMoney { get; private set; }
     public float Coins { get { return coins; } }
 
     void Start()
