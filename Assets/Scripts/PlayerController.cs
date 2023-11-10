@@ -12,11 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject groundCast;
     [SerializeField] LayerMask clickableLayers;
     private Tile currentTile;
+    [SerializeField] private float fallSpeed;
     [SerializeField] private float movementSpeed;
     public int shardsCollected = 0;
-
-    private Animator anim;
-    [SerializeField] SkinnedMeshRenderer meshRenderer;
 
     public GameObject mirrorShard1;
     public GameObject mirrorShard2;
@@ -44,7 +42,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>(); // get character controller
-        anim = GetComponentInChildren<Animator>();
         input = GetComponent<InputManager>();
         playerInput = GetComponent<PlayerInput>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -60,6 +57,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -73,7 +71,6 @@ public class PlayerController : MonoBehaviour
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, turningTime);
             transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);*/
         }
-
         if (input.click == true)
         {
             RaycastHit clickTarget;
@@ -83,16 +80,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (agent.remainingDistance > 0)
-        {
-            anim.SetBool("Walk", true);
-        }
-        else
-        {
-            anim.SetBool("Walk", false);
-        }
-
-        //Debug.Log(agent.remainingDistance);
 
         if (input.exit)
         {
@@ -147,16 +134,12 @@ public class PlayerController : MonoBehaviour
     public void CorruptionEffect()
     {
         corruption += 1;
-        float increment = corruption * -0.49f;
         corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {
             levelFailUI.SetActive(true);
             Destroy(this);
         }
-        Material[] materials = meshRenderer.materials;
-        materials[1].SetFloat("_Timer", increment);
-
         Debug.Log("Corruption level: " + corruption);
     }
 

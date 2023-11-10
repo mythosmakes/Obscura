@@ -577,9 +577,9 @@ MonoBehaviour:
   clickableLayers:
     serializedVersion: 2
     m_Bits: 64
+  fallSpeed: 0
   movementSpeed: 10
   shardsCollected: 0
-  meshRenderer: {fileID: 2732299151452631385}
   mirrorShard1: {fileID: 2653001355992998749}
   mirrorShard2: {fileID: 2653001355498185833}
   mirrorShard3: {fileID: 2653001354856525896}
@@ -741,19 +741,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5258114292768285898, guid: 837830cb1386f4a40b3b5030cafdeaac,
         type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258114292768285898, guid: 837830cb1386f4a40b3b5030cafdeaac,
-        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ead0f3c98be51b143a8a9778ee83f619, type: 2}
-    - target: {fileID: 5258114292768285898, guid: 837830cb1386f4a40b3b5030cafdeaac,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: e35328a91c568cd4ba51a4f9c81c1b12, type: 2}
     - target: {fileID: 5866666021909216657, guid: 837830cb1386f4a40b3b5030cafdeaac,
         type: 3}
       propertyPath: m_Controller
@@ -761,12 +751,6 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 9fb35946a73015e4183a9b018b81f75b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 837830cb1386f4a40b3b5030cafdeaac, type: 3}
---- !u!137 &2732299151452631385 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5258114292768285898, guid: 837830cb1386f4a40b3b5030cafdeaac,
-    type: 3}
-  m_PrefabInstance: {fileID: 7859767118419776915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7681234343889056376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 837830cb1386f4a40b3b5030cafdeaac,
