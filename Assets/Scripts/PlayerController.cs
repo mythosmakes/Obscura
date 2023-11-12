@@ -41,10 +41,6 @@ public class PlayerController : MonoBehaviour
     public int corruption = 0;
     public Text corruptionText;
 
-    public AudioSource soundEffects;
-    public AudioClip footsteps;
-    public bool isWalking;
-
     private void Start()
     {
         characterController = GetComponent<CharacterController>(); // get character controller
@@ -59,8 +55,6 @@ public class PlayerController : MonoBehaviour
         mirrorShard3.SetActive(false);
 
         defaultMoveSpeed = moveSpeed;
-
-        soundEffects.clip = footsteps;
     }
 
     // Update is called once per frame
@@ -92,24 +86,11 @@ public class PlayerController : MonoBehaviour
         if (agent.remainingDistance > 0)
         {
             anim.SetBool("Walk", true);
-            isWalking = true;
         }
         else
         {
             anim.SetBool("Walk", false);
-            isWalking = false;
         }
-
-        if(isWalking == true)
-        {
-            soundEffects.Play();
-        }
-        else
-        {
-            soundEffects.Stop();
-        }
-
-
 
         //Debug.Log(agent.remainingDistance);
 
@@ -170,8 +151,6 @@ public class PlayerController : MonoBehaviour
         corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {
-            anim.SetBool("Walk", false);
-            isWalking = false;
             levelFailUI.SetActive(true);
             Destroy(this);
         }
