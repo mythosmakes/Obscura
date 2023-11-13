@@ -70,7 +70,7 @@ public class CurrencyShop : MonoBehaviour
 
     public void AddMoney()
     {
-        playerMoney += .10f;
+        playerMoney += 10.00f;
         moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
     }
 
