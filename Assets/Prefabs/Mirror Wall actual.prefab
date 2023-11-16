@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7778503204337250924}
   - component: {fileID: 6655494408593309129}
   - component: {fileID: 8915411676545517827}
-  - component: {fileID: 956986004284644961}
   m_Layer: 0
   m_Name: Mirror Wall actual
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6969632543468562646}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.860569, y: 2, z: 46.26041}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 819, y: 819, z: 819}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &956986004284644961
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6969632543468562646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.12041181, y: 0.011177873, z: 0.060046427}
-  m_Center: {x: 0, y: -0.0006047747, z: -0.00051071856}
