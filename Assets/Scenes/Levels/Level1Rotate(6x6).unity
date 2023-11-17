@@ -5045,6 +5045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e209e2f506227a245918dbe54284b6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayingTileRotation: 1
   groundCast: {fileID: 361564161}
   clickableLayers:
     serializedVersion: 2
