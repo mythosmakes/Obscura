@@ -14,6 +14,8 @@ public class SaveManager : MonoBehaviour
 
     public int totalCoins { get; private set; } = 0;
 
+    public bool isPlayingTileRotation { get; private set; } = true;
+
     private void Awake()
     {
         if (Instance != null)
@@ -28,9 +30,23 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    private void Start()
+
+    public void SetGamemode(int gamemode)
     {
-        
+        if(gamemode == 1)
+        {
+            isPlayingTileRotation = true;
+            Debug.Log("gamemode = 1");
+        }
+        else if(gamemode == 0)
+        {
+            isPlayingTileRotation = false;
+            Debug.Log("gamemode = 0");
+        }
+        else
+        {
+            Debug.Log("Invalid Gamemode");
+        }
     }
 
     public void SaveData(int shardsCollected, int sceneIndex, int coinsCollected)
