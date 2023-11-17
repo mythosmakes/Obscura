@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] bool isPlayingTileRotation;
     [SerializeField] private GameObject groundCast;
     [SerializeField] LayerMask clickableLayers;
     private Tile currentTile;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+
         characterController = GetComponent<CharacterController>(); // get character controller
         anim = GetComponentInChildren<Animator>();
         input = GetComponent<InputManager>();
@@ -55,7 +57,16 @@ public class PlayerController : MonoBehaviour
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         saveManager = SaveManager.Instance;
         Time.timeScale = 1;
-        
+
+        if (isPlayingTileRotation == true)
+        {
+            saveManager.SetGamemode(1);
+        }
+        else
+        {
+            saveManager.SetGamemode(0);
+        }
+
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
         mirrorShard3.SetActive(false);
