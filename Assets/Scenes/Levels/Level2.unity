@@ -2517,7 +2517,7 @@ PrefabInstance:
     - target: {fileID: 8427705784051733146, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8427705784051733146, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
@@ -4700,7 +4700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 2100000, guid: e09cabdc5972b2d4aacf7c470b263b99, type: 2}
-  alternateMaterial: {fileID: 2100000, guid: 25f196eaf9792d24bad3b193e81dbf77, type: 2}
+  alternateMaterial: {fileID: 2100000, guid: 71d7a62c17e646c4f9ccb02aa40023a7, type: 2}
   slowAmount: 3
 --- !u!65 &1970698196
 BoxCollider:
