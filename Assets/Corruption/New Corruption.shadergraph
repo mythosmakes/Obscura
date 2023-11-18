@@ -335,9 +335,9 @@
     "m_ShaderOutputName": "Emission",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5960784554481506,
-        "y": 0.2823529541492462,
-        "z": 1.3647059202194214
+        "x": 0.709215521812439,
+        "y": 0.313081830739975,
+        "z": 0.8194239735603333
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -1166,9 +1166,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.44304025173187258,
-        "y": 0.7169811725616455,
-        "z": 0.5661483407020569
+        "x": 0.5086329579353333,
+        "y": 0.8022212982177734,
+        "z": 0.849056601524353
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -1300,7 +1300,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.11999999731779099,
+    "m_Value": 1.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
