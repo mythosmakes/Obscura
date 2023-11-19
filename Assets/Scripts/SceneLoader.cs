@@ -20,6 +20,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -53,5 +58,15 @@ public class SceneLoader : MonoBehaviour
     public void LoadLevelStart()
     {
         SceneManager.LoadScene("LevelStart");
+    }
+
+    public void LoadRotationLevelStart()
+    {
+        SceneManager.LoadScene("Level1Rotate(6x6)");
+    }
+
+    public void LoadRotationLevel1()
+    {
+        SceneManager.LoadScene("Level2Rotate(9x9)");
     }
 }

@@ -9,11 +9,13 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] bool isPlayingTileRotation;
     [SerializeField] private GameObject groundCast;
     [SerializeField] LayerMask clickableLayers;
     private Tile currentTile;
     [SerializeField] private float movementSpeed;
     public int shardsCollected = 0;
+    private SaveManager saveManager;
 
     private Animator anim;
     [SerializeField] SkinnedMeshRenderer meshRenderer;
@@ -47,13 +49,24 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+
         characterController = GetComponent<CharacterController>(); // get character controller
         anim = GetComponentInChildren<Animator>();
         input = GetComponent<InputManager>();
         playerInput = GetComponent<PlayerInput>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        saveManager = SaveManager.Instance;
         Time.timeScale = 1;
-        
+
+        if (isPlayingTileRotation == true)
+        {
+            saveManager.SetGamemode(1);
+        }
+        else
+        {
+            saveManager.SetGamemode(0);
+        }
+
         mirrorShard1.SetActive(false);
         mirrorShard2.SetActive(false);
         mirrorShard3.SetActive(false);
@@ -73,7 +86,18 @@ public class PlayerController : MonoBehaviour
             RaycastHit clickTarget;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(touch.position), out clickTarget, 1000, clickableLayers))
             {
-                agent.destination = clickTarget.point;
+                //Check which gamemode player is in so correct behavior is displayed
+                if(saveManager.isPlayingTileRotation == true && clickTarget.collider.gameObject.TryGetComponent<TileRotator>(out TileRotator tileRotator))
+                {
+                    Debug.Log("Hit tile rotator");
+                    tileRotator.Activate();
+                }
+                else if (saveManager.isPlayingTileRotation == false)
+                {
+                    agent.destination = clickTarget.point;
+                }
+                
+
             }
             /*targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + 45;
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, turningTime);
@@ -85,7 +109,16 @@ public class PlayerController : MonoBehaviour
             RaycastHit clickTarget;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out clickTarget, 1000, clickableLayers))
             {
-                agent.destination = clickTarget.point;
+                //Check which gamemode player is in so correct behavior is displayed
+                if (saveManager.isPlayingTileRotation == true && clickTarget.collider.gameObject.TryGetComponent<TileRotator>(out TileRotator tileRotator))
+                {
+                    Debug.Log("Hit tile rotator");
+                    tileRotator.Activate();
+                }
+                else if (saveManager.isPlayingTileRotation == false)
+                {
+                    agent.destination = clickTarget.point;
+                }
             }
         }
 
@@ -167,7 +200,7 @@ public class PlayerController : MonoBehaviour
     {
         corruption += 1;
         float increment = corruption * -0.49f;
-        corruptionText.text = "Health: " + (3 - corruption);
+        //corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {
             anim.SetBool("Walk", false);
@@ -189,5 +222,13 @@ public class PlayerController : MonoBehaviour
     public void ResetSpeed()
     {
         moveSpeed = defaultMoveSpeed;
+    }
+
+    public void Move()
+    {
+        if(saveManager.isPlayingTileRotation == true)
+        {
+
+        }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68336fd6d311278459790f77ebacffaf
+guid: d332496a2b5af3441ade83c31b20977e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  ignorePngGamma: 0
+  ignorePngGamma: 1
   applyGammaDecoding: 0
   cookieLightType: 0
   platformSettings:
@@ -127,7 +127,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Level_Select_Screen_Mirror_Doors_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 276
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23090e735a90e744689fd09fd43ea87d
+      internalID: -300994836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Select_Screen_Mirror_Doors_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 0
+        width: 278
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e49740b8c08357458d9f45e75805763
+      internalID: -951807978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Select_Screen_Mirror_Doors_2
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 276
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40c5f733eda6e8459ae9f8f6dd62603
+      internalID: -7984643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Select_Screen_Mirror_Doors_3
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 0
+        width: 272
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4706b63020596439b9f0a5889c2ea4
+      internalID: 135500523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Select_Screen_Mirror_Doors_4
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 0
+        width: 276
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3668c747b0ba343a446d90a8ea5137
+      internalID: 1238992647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Select_Screen_Mirror_Doors_5
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 0
+        width: 273
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6645431d30aa0040b50854a980b4405
+      internalID: 65821210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +264,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Level_Select_Screen_Mirror_Doors_0: -300994836
+      Level_Select_Screen_Mirror_Doors_1: -951807978
+      Level_Select_Screen_Mirror_Doors_2: -7984643
+      Level_Select_Screen_Mirror_Doors_3: 135500523
+      Level_Select_Screen_Mirror_Doors_4: 1238992647
+      Level_Select_Screen_Mirror_Doors_5: 65821210
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
