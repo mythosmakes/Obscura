@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
     {
         corruption += 1;
         float increment = corruption * -0.49f;
-        corruptionText.text = "Health: " + (3 - corruption);
+        //corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {
             anim.SetBool("Walk", false);
