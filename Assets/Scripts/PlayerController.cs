@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
     public GameObject destination33;
     public GameObject destination34;
     public GameObject destination35;
+    public GameObject destination36;
 
     public bool setMovementLevel;
 
@@ -579,6 +580,14 @@ public class PlayerController : MonoBehaviour
     {
         stopped = false;
         agent.destination = destination35.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AJ());
+    }
+
+    IEnumerator Move2AJ()
+    {
+        stopped = false;
+        agent.destination = destination36.transform.position;
         yield return new WaitUntil(() => stopped == true);
     }
 }

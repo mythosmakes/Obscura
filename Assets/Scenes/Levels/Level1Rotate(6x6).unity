@@ -651,7 +651,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Tap on a quadrant of spaces to rotate it 90 degrees clockwise.  You may
-    need to shift quadrants multiple times.
+    need to shift quadrants multiple times.  Press the play button to start movement.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 085192dda1b4085489bb316976e1ba6f, type: 2}
   m_sharedMaterial: {fileID: -5706927515747150733, guid: 085192dda1b4085489bb316976e1ba6f,
@@ -1504,7 +1504,7 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -1514,12 +1514,12 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -1540,12 +1540,12 @@ PrefabInstance:
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1853376440}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 390284203}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[3].m_Target
@@ -1589,12 +1589,12 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: Clear
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: Clear
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -1614,12 +1614,12 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.CanvasRenderer, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.CanvasRenderer, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -3581,7 +3581,7 @@ PrefabInstance:
     - target: {fileID: 4339012896301312368, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenu
+      value: LoadRotationLevel1
       objectReference: {fileID: 0}
     - target: {fileID: 4339012896301312368, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
@@ -3601,7 +3601,7 @@ PrefabInstance:
     - target: {fileID: 6101371321036140270, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6868114686931381493, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
@@ -5703,6 +5703,35 @@ MonoBehaviour:
   destination5: {fileID: 1649540972}
   destination6: {fileID: 988360070}
   destination7: {fileID: 1686728666}
+  destination8: {fileID: 0}
+  destination9: {fileID: 0}
+  destination10: {fileID: 0}
+  destination11: {fileID: 0}
+  destination12: {fileID: 0}
+  destination13: {fileID: 0}
+  destination14: {fileID: 0}
+  destination15: {fileID: 0}
+  destination16: {fileID: 0}
+  destination17: {fileID: 0}
+  destination18: {fileID: 0}
+  destination19: {fileID: 0}
+  destination20: {fileID: 0}
+  destination21: {fileID: 0}
+  destination22: {fileID: 0}
+  destination23: {fileID: 0}
+  destination24: {fileID: 0}
+  destination25: {fileID: 0}
+  destination26: {fileID: 0}
+  destination27: {fileID: 0}
+  destination28: {fileID: 0}
+  destination29: {fileID: 0}
+  destination30: {fileID: 0}
+  destination31: {fileID: 0}
+  destination32: {fileID: 0}
+  destination33: {fileID: 0}
+  destination34: {fileID: 0}
+  destination35: {fileID: 0}
+  destination36: {fileID: 0}
   setMovementLevel: 1
 --- !u!1 &2653001356250240318
 GameObject:
