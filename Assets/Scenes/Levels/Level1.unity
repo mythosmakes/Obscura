@@ -130,11 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 193434595052312839, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
-        type: 3}
-      propertyPath: m_Name
-      value: Lost Life 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2244555362440582541, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -185,11 +180,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -849.5999
       objectReference: {fileID: 0}
-    - target: {fileID: 5357544952447049241, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
-        type: 3}
-      propertyPath: m_Name
-      value: Dead
-      objectReference: {fileID: 0}
     - target: {fileID: 5482848135288887219, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: m_Sprite
@@ -206,21 +196,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6117395114151554683, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
-        type: 3}
-      propertyPath: m_Name
-      value: Lost Life 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6868114686931381493, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1880203813}
-    - target: {fileID: 6967077702078403405, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
-        type: 3}
-      propertyPath: m_Name
-      value: Lives Full
-      objectReference: {fileID: 0}
     - target: {fileID: 7914627620932677479, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: m_RootOrder
