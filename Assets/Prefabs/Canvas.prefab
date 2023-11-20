@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2771117404956007473}
   - component: {fileID: 9103126472220964659}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Lost Life 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3397,7 +3397,7 @@ GameObject:
   - component: {fileID: 8441199110100933301}
   - component: {fileID: 3209297534785729948}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4137,7 +4137,7 @@ GameObject:
   - component: {fileID: 4044051120661131039}
   - component: {fileID: 325787792817939802}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Lost Life 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5456,7 +5456,7 @@ GameObject:
   - component: {fileID: 2371989437852907384}
   - component: {fileID: 2531500593687924724}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Full Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
