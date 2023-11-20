@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12477,6 +12477,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayingTileRotation: 1
+  clickRotationColliders:
+  - {fileID: 1155126453}
+  - {fileID: 622038119}
+  - {fileID: 2081558900}
+  - {fileID: 225174226}
+  - {fileID: 439246360}
+  - {fileID: 1998279529}
+  - {fileID: 1791961328}
+  - {fileID: 85932838}
+  - {fileID: 1085905120}
   groundCast: {fileID: 361564161}
   clickableLayers:
     serializedVersion: 2

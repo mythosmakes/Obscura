@@ -33,7 +33,7 @@ public class TileRotator : MonoBehaviour
 
         if (t >= 1 && activated == true)
         {
-            Debug.Log("activated = false");
+            //Debug.Log("activated = false");
             activated = false;
             canActivate = true;
         }
