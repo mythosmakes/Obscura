@@ -46,6 +46,45 @@ public class PlayerController : MonoBehaviour
     public AudioSource soundEffects;
     public AudioClip footsteps;
     public bool isWalking;
+    public bool stopped;
+    
+    public GameObject destination1;
+    public GameObject destination2;
+    public GameObject destination3;
+    public GameObject destination4;
+    public GameObject destination5;
+    public GameObject destination6;
+    public GameObject destination7;
+    public GameObject destination8;
+    public GameObject destination9;
+    public GameObject destination10;
+    public GameObject destination11;
+    public GameObject destination12;
+    public GameObject destination13;
+    public GameObject destination14;
+    public GameObject destination15;
+    public GameObject destination16;
+    public GameObject destination17;
+    public GameObject destination18;
+    public GameObject destination19;
+    public GameObject destination20;
+    public GameObject destination21;
+    public GameObject destination22;
+    public GameObject destination23;
+    public GameObject destination24;
+    public GameObject destination25;
+    public GameObject destination26;
+    public GameObject destination27;
+    public GameObject destination28;
+    public GameObject destination29;
+    public GameObject destination30;
+    public GameObject destination31;
+    public GameObject destination32;
+    public GameObject destination33;
+    public GameObject destination34;
+    public GameObject destination35;
+
+    public bool setMovementLevel;
 
     private void Start()
     {
@@ -58,7 +97,7 @@ public class PlayerController : MonoBehaviour
         saveManager = SaveManager.Instance;
         Time.timeScale = 1;
 
-        if (isPlayingTileRotation == true)
+        if (!agent.hasPath)
         {
             saveManager.SetGamemode(1);
         }
@@ -79,6 +118,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!agent.hasPath)
+        {
+            stopped = true;
+        }
+        else
+        {
+            stopped = false;
+        }
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -230,5 +277,308 @@ public class PlayerController : MonoBehaviour
         {
 
         }
+    }
+
+    public void Move1()
+    {
+        StartCoroutine(Move1A());
+    }
+    IEnumerator Move1A()
+    {
+        stopped = false;
+        agent.destination = destination1.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move1B());
+    }
+    IEnumerator Move1B()
+    {
+        stopped = false;
+        agent.destination = destination2.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move1C());
+    }
+    IEnumerator Move1C()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination3.transform.position;
+        StartCoroutine(Move1D());
+    }
+    IEnumerator Move1D()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination4.transform.position;
+        StartCoroutine(Move1E());
+    }
+    IEnumerator Move1E()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination5.transform.position;
+        StartCoroutine(Move1F());
+    }
+    IEnumerator Move1F()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination6.transform.position;
+        StartCoroutine(Move1G());
+    }
+    IEnumerator Move1G()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination7.transform.position;
+    }
+
+
+    public void Move2()
+    {
+        StartCoroutine(Move2A());
+    }
+    IEnumerator Move2A()
+    {
+        stopped = false;
+        agent.destination = destination1.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2B());
+    }
+    IEnumerator Move2B()
+    {
+        stopped = false;
+        agent.destination = destination2.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2C());
+    }
+    IEnumerator Move2C()
+    {
+        stopped = false;
+        agent.destination = destination3.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2D());
+    }
+    IEnumerator Move2D()
+    {
+        stopped = false;
+        agent.destination = destination4.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2E());
+    }
+    IEnumerator Move2E()
+    {
+        stopped = false;
+        agent.destination = destination5.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2F());
+    }
+    IEnumerator Move2F()
+    {
+        stopped = false;
+        agent.destination = destination6.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2G());
+    }
+    IEnumerator Move2G()
+    {
+        stopped = false;
+        agent.destination = destination7.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2H());
+    }
+    IEnumerator Move2H()
+    {
+        stopped = false;
+        agent.destination = destination8.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2I());
+    }
+    IEnumerator Move2I()
+    {
+        stopped = false;
+        agent.destination = destination9.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2J());
+    }
+    IEnumerator Move2J()
+    {
+        stopped = false;
+        agent.destination = destination10.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2K());
+    }
+    IEnumerator Move2K()
+    {
+        stopped = false;
+        agent.destination = destination11.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2L());
+    }
+    IEnumerator Move2L()
+    {
+        stopped = false;
+        agent.destination = destination12.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2M());
+    }
+    IEnumerator Move2M()
+    {
+        stopped = false;
+        agent.destination = destination13.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2N());
+    }
+    IEnumerator Move2N()
+    {
+        stopped = false;
+        agent.destination = destination14.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2O());
+    }
+    IEnumerator Move2O()
+    {
+        stopped = false;
+        agent.destination = destination15.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2P());
+    }
+    IEnumerator Move2P()
+    {
+        stopped = false;
+        agent.destination = destination16.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2Q());
+    }
+    IEnumerator Move2Q()
+    {
+        stopped = false;
+        agent.destination = destination17.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2R());
+    }
+    IEnumerator Move2R()
+    {
+        stopped = false;
+        agent.destination = destination18.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2S());
+    }
+    IEnumerator Move2S()
+    {
+        stopped = false;
+        agent.destination = destination19.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2T());
+    }
+    IEnumerator Move2T()
+    {
+        stopped = false;
+        agent.destination = destination20.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2U());
+    }
+    IEnumerator Move2U()
+    {
+        stopped = false;
+        agent.destination = destination21.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2V());
+    }
+    IEnumerator Move2V()
+    {
+        stopped = false;
+        agent.destination = destination22.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2W());
+    }
+    IEnumerator Move2W()
+    {
+        stopped = false;
+        agent.destination = destination23.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2X());
+    }
+    IEnumerator Move2X()
+    {
+        stopped = false;
+        agent.destination = destination24.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2Y());
+    }
+    IEnumerator Move2Y()
+    {
+        stopped = false;
+        agent.destination = destination25.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2Z());
+    }
+    IEnumerator Move2Z()
+    {
+        stopped = false;
+        agent.destination = destination26.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AA());
+    }
+    IEnumerator Move2AA()
+    {
+        stopped = false;
+        agent.destination = destination27.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AB());
+    }
+    IEnumerator Move2AB()
+    {
+        stopped = false;
+        agent.destination = destination28.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AC());
+    }
+    IEnumerator Move2AC()
+    {
+        stopped = false;
+        agent.destination = destination29.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AD());
+    }
+    IEnumerator Move2AD()
+    {
+        stopped = false;
+        agent.destination = destination30.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AE());
+    }
+    IEnumerator Move2AE()
+    {
+        stopped = false;
+        agent.destination = destination31.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AF());
+    }
+    IEnumerator Move2AF()
+    {
+        stopped = false;
+        agent.destination = destination32.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AG());
+    }
+    IEnumerator Move2AG()
+    {
+        stopped = false;
+        agent.destination = destination33.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AH());
+    }
+    IEnumerator Move2AH()
+    {
+        stopped = false;
+        agent.destination = destination34.transform.position;
+        yield return new WaitUntil(() => stopped == true);
+        StartCoroutine(Move2AI());
+    }
+    IEnumerator Move2AI()
+    {
+        stopped = false;
+        agent.destination = destination35.transform.position;
+        yield return new WaitUntil(() => stopped == true);
     }
 }
