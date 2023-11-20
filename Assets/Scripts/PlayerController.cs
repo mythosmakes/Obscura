@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
         saveManager = SaveManager.Instance;
         Time.timeScale = 1;
 
-        if (!agent.hasPath)
+        if (isPlayingTileRotation == true) 
         {
             saveManager.SetGamemode(1);
         }
