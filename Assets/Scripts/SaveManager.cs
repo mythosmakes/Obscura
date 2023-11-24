@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,10 @@ public class SaveManager : MonoBehaviour
 
     public bool isPlayingTileRotation { get; private set; } = true;
 
+    public static Action OnMuteMusic;
+    public static Action OnUnmuteMusic;
+    public bool muteMusic { get; private set; }
+
     private void Awake()
     {
         if (Instance != null)
@@ -27,6 +32,20 @@ public class SaveManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this);
+        }
+    }
+
+    public void ToggleMusic(bool condition)
+    {
+        if(condition == true)
+        {
+            OnMuteMusic?.Invoke();
+            muteMusic = true;
+        }
+        else
+        {
+            OnUnmuteMusic?.Invoke();
+            muteMusic = false;
         }
     }
 
