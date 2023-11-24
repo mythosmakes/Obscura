@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1281,6 +1281,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7506128398819272460, guid: 549b714b489b1fc4aa957429c47ba065,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549b714b489b1fc4aa957429c47ba065, type: 3}
 --- !u!4 &712782798 stripped
@@ -1524,7 +1529,7 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -1550,7 +1555,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 856094376}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[4].m_Target
@@ -1599,7 +1604,7 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: SetActive
+      value: Clear
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -1624,7 +1629,7 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.CanvasRenderer, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -1799,6 +1804,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 856094376}
+        m_TargetAssemblyTypeName: UnityEngine.CanvasRenderer, UnityEngine
+        m_MethodName: set_cull
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &856094375
 MonoBehaviour:
@@ -3233,22 +3250,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ebadbbe8cc24eda4e8e00bf21b28a0ff,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.35355338
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebadbbe8cc24eda4e8e00bf21b28a0ff,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.8535535
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebadbbe8cc24eda4e8e00bf21b28a0ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.1464466
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebadbbe8cc24eda4e8e00bf21b28a0ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.35355338
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebadbbe8cc24eda4e8e00bf21b28a0ff,
         type: 3}
@@ -3258,7 +3275,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ebadbbe8cc24eda4e8e00bf21b28a0ff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebadbbe8cc24eda4e8e00bf21b28a0ff,
         type: 3}
@@ -3350,7 +3367,7 @@ MonoBehaviour:
 
     3 Spaces East
 
-    1 Space Down
+    1 Space South
 
 '
   m_isRightToLeft: 0
@@ -4132,15 +4149,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123005059}
-  m_LocalRotation: {x: 0.30399996, y: 0.36137307, z: -0.1259209, w: 0.8724319}
-  m_LocalPosition: {x: -9.4, y: 15.86, z: 17.43}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: -0.25, y: 17.25, z: 15.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 712782798}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 38.422, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!82 &2123005065
 AudioSource:
   m_ObjectHideFlags: 0

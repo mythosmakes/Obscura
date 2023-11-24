@@ -343,6 +343,22 @@ public class PlayerController : MonoBehaviour
         stopped = false;
         yield return new WaitUntil(() => stopped == true);
         agent.destination = destination7.transform.position;
+        StartCoroutine(Move1H());
+    }
+
+    IEnumerator Move1H()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination8.transform.position;
+        StartCoroutine(Move1I());
+    }
+
+    IEnumerator Move1I()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination9.transform.position;
     }
 
 
