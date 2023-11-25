@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed;
     public int shardsCollected = 0;
     private SaveManager saveManager;
+    public static Action OnTakeDamage;
 
     private Animator anim;
     [SerializeField] SkinnedMeshRenderer meshRenderer;
@@ -251,6 +253,7 @@ public class PlayerController : MonoBehaviour
     {
         corruption += 1;
         float increment = corruption * -0.49f;
+        OnTakeDamage?.Invoke();
         //corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {
