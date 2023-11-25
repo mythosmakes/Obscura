@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class SaveManager : MonoBehaviour
     public int levelFiveShards { get; private set; } = 0;
 
     public int totalCoins { get; private set; } = 0;
+    public float totalMoney { get; private set; } = 0;
 
     public bool isPlayingTileRotation { get; private set; } = true;
 
@@ -68,7 +70,7 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void SaveData(int shardsCollected, int sceneIndex, int coinsCollected)
+    public void SaveData(int shardsCollected, int sceneIndex)
     {
         switch (sceneIndex)
         {
@@ -98,8 +100,15 @@ public class SaveManager : MonoBehaviour
                     break;
                 }
         }
+    }
 
-        totalCoins = coinsCollected;
+    public void SetCoins(int amount)
+    {
+        totalCoins = amount;
+    }
 
+    public void SetPlayerMoney(float amount)
+    {
+        totalMoney = amount;
     }
 }

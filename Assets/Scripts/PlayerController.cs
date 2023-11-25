@@ -209,10 +209,10 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(groundCast.transform.position, Vector3.down, out hit, 5.0f))
         {
-            Debug.Log("Raycast");
+            //Debug.Log("Raycast");
             if (hit.collider.gameObject.TryGetComponent<Tile>(out Tile tile))
             {
-                Debug.Log("Hit tile");
+                //Debug.Log("Hit tile");
                 if (tile != currentTile && currentTile != null)
                 {
                     currentTile.Deactivate();
