@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed;
     public int shardsCollected = 0;
     private SaveManager saveManager;
+    public static Action OnTakeDamage;
 
     private Animator anim;
     [SerializeField] SkinnedMeshRenderer meshRenderer;
@@ -209,10 +211,10 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(groundCast.transform.position, Vector3.down, out hit, 5.0f))
         {
-            Debug.Log("Raycast");
+            //Debug.Log("Raycast");
             if (hit.collider.gameObject.TryGetComponent<Tile>(out Tile tile))
             {
-                Debug.Log("Hit tile");
+                //Debug.Log("Hit tile");
                 if (tile != currentTile && currentTile != null)
                 {
                     currentTile.Deactivate();
@@ -251,6 +253,7 @@ public class PlayerController : MonoBehaviour
     {
         corruption += 1;
         float increment = corruption * -0.49f;
+        OnTakeDamage?.Invoke();
         //corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {

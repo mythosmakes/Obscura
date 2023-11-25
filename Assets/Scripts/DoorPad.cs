@@ -20,7 +20,7 @@ public class DoorPad : MonoBehaviour
             if (playerController.shardsCollected >= shardsNeeded && activated == false)
             {
                 Time.timeScale = 0;
-                SaveManager.Instance.SaveData(playerController.shardsCollected, SceneManager.GetActiveScene().buildIndex, (int)currencyShop.Coins);
+                SaveManager.Instance.SaveData(playerController.shardsCollected, SceneManager.GetActiveScene().buildIndex);
                 playerController.UpdateShards(-shardsNeeded);
                 currencyShop.RewardCoins(coinReward);
                 //Debug.Log("From DoorPad: " + currencyShop.Coins);
