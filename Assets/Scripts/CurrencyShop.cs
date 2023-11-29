@@ -16,6 +16,8 @@ public class CurrencyShop : MonoBehaviour
 
     void Start()
     {
+        coins = SaveManager.Instance.totalCoins;
+        playerMoney = SaveManager.Instance.totalMoney;
         gameUI.SetActive(true);
         shopUI.SetActive(false);
         moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
@@ -65,17 +67,20 @@ public class CurrencyShop : MonoBehaviour
     {
         coins += rewardCoins;
         coinsText.text = coins.ToString();
+        SaveManager.Instance.SetCoins(coins);
     }
 
     public void AddMoney()
     {
         playerMoney += .10f;
         moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
+        SaveManager.Instance.SetPlayerMoney(playerMoney);
     }
 
     public void SpendCoins(int amount)
     {
         coins -= amount;
         coinsText.text = coins.ToString();
+        SaveManager.Instance.SetCoins(coins);
     }
 }

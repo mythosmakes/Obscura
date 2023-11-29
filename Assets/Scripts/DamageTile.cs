@@ -8,6 +8,7 @@ public class DamageTile : Tile
 
     public override void Activate(PlayerController playerController)
     {
+        Debug.Log("Activated");
         base.Activate(playerController);
         if (active == false)
         {

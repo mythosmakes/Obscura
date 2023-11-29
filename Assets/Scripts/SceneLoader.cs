@@ -62,11 +62,21 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadRotationLevelStart()
     {
-        SceneManager.LoadScene("Level1Rotate(6x6)");
+        SceneManager.LoadScene("Level1Rotate(6x6) 1");
     }
 
     public void LoadRotationLevel1()
     {
-        SceneManager.LoadScene("Level2Rotate(9x9)");
+        SceneManager.LoadScene("Level4Rotate(9x9) 1");
+    }
+
+    public void LoadChristmasLevel1()
+    {
+        SceneManager.LoadScene("Level2Rotate(6x6)");
+    }
+
+    public void LoadChristmasLevel2()
+    {
+        SceneManager.LoadScene("Level3Rotate(9x9)");
     }
 }

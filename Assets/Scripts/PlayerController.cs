@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,12 +11,14 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] bool isPlayingTileRotation;
+    [SerializeField] List<Collider> clickRotationColliders;
     [SerializeField] private GameObject groundCast;
     [SerializeField] LayerMask clickableLayers;
     private Tile currentTile;
     [SerializeField] private float movementSpeed;
     public int shardsCollected = 0;
     private SaveManager saveManager;
+    public static Action OnTakeDamage;
 
     private Animator anim;
     [SerializeField] SkinnedMeshRenderer meshRenderer;
@@ -98,7 +101,7 @@ public class PlayerController : MonoBehaviour
         saveManager = SaveManager.Instance;
         Time.timeScale = 1;
 
-        if (!agent.hasPath)
+        if (isPlayingTileRotation == true) 
         {
             saveManager.SetGamemode(1);
         }
@@ -137,7 +140,7 @@ public class PlayerController : MonoBehaviour
                 //Check which gamemode player is in so correct behavior is displayed
                 if(saveManager.isPlayingTileRotation == true && clickTarget.collider.gameObject.TryGetComponent<TileRotator>(out TileRotator tileRotator))
                 {
-                    Debug.Log("Hit tile rotator");
+                    //Debug.Log("Hit tile rotator");
                     tileRotator.Activate();
                 }
                 else if (saveManager.isPlayingTileRotation == false)
@@ -160,7 +163,7 @@ public class PlayerController : MonoBehaviour
                 //Check which gamemode player is in so correct behavior is displayed
                 if (saveManager.isPlayingTileRotation == true && clickTarget.collider.gameObject.TryGetComponent<TileRotator>(out TileRotator tileRotator))
                 {
-                    Debug.Log("Hit tile rotator");
+                    //Debug.Log("Hit tile rotator");
                     tileRotator.Activate();
                 }
                 else if (saveManager.isPlayingTileRotation == false)
@@ -208,8 +211,10 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(groundCast.transform.position, Vector3.down, out hit, 5.0f))
         {
+            //Debug.Log("Raycast");
             if (hit.collider.gameObject.TryGetComponent<Tile>(out Tile tile))
             {
+                //Debug.Log("Hit tile");
                 if (tile != currentTile && currentTile != null)
                 {
                     currentTile.Deactivate();
@@ -248,6 +253,7 @@ public class PlayerController : MonoBehaviour
     {
         corruption += 1;
         float increment = corruption * -0.49f;
+        OnTakeDamage?.Invoke();
         //corruptionText.text = "Health: " + (3 - corruption);
         if(corruption >= 3)
         {
@@ -280,8 +286,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void HideRotationColliders()
+    {
+        foreach(Collider collider in clickRotationColliders)
+        {
+            collider.enabled = false;
+        }
+    }
+
     public void Move1()
     {
+        HideRotationColliders();
         StartCoroutine(Move1A());
     }
     IEnumerator Move1A()
@@ -331,11 +346,28 @@ public class PlayerController : MonoBehaviour
         stopped = false;
         yield return new WaitUntil(() => stopped == true);
         agent.destination = destination7.transform.position;
+        StartCoroutine(Move1H());
+    }
+
+    IEnumerator Move1H()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination8.transform.position;
+        StartCoroutine(Move1I());
+    }
+
+    IEnumerator Move1I()
+    {
+        stopped = false;
+        yield return new WaitUntil(() => stopped == true);
+        agent.destination = destination9.transform.position;
     }
 
 
     public void Move2()
     {
+        HideRotationColliders();
         StartCoroutine(Move2A());
     }
     IEnumerator Move2A()

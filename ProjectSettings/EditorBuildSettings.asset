@@ -30,11 +30,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level5.unity
     guid: a6ebb40cd15c3e142855169f772f427c
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1Rotate(6x6).unity
+    path: Assets/Scenes/Levels/Level1Rotate(6x6) 1.unity
+    guid: 80facb5e1c10ffb44a3b735893b956be
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2Rotate(6x6).unity
     guid: 8fb9fe518c759a44cbebdc776a912c83
   - enabled: 1
-    path: Assets/Scenes/Levels/Level2Rotate(9x9).unity
+    path: Assets/Scenes/Levels/Level3Rotate(9x9).unity
     guid: 78c5783c8e7e14c46a93fa9e9af3eba2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4Rotate(9x9) 1.unity
+    guid: 16f5202b2e0fc07459e69288340411be
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 9ed5a36e9677176468e9071a6501c851, type: 2}
