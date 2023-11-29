@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (saveManager.isPlayingTileRotation == false)
                 {
-                    agent.destination = clickTarget.point;
+                    //agent.destination = clickTarget.point;
                 }
             }
         }
@@ -225,6 +225,24 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    public void MoveNE()
+    {
+        agent.destination = new Vector3(agent.destination.x + 2, agent.destination.y, agent.destination.z);
+    }
+    public void MoveNW()
+    {
+        agent.destination = new Vector3(agent.destination.x, agent.destination.y, agent.destination.z + 2);
+    }
+    public void MoveSE()
+    {
+        agent.destination = new Vector3(agent.destination.x, agent.destination.y, agent.destination.z - 2);
+    }
+    public void MoveSW()
+    {
+        agent.destination = new Vector3(agent.destination.x - 2, agent.destination.y, agent.destination.z);
+    }
+
     public void UpdateShards(int shards)
     {
         shardsCollected += shards;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2187,6 +2187,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 2100000, guid: e09cabdc5972b2d4aacf7c470b263b99, type: 2}
   alternateMaterial: {fileID: 2100000, guid: e09cabdc5972b2d4aacf7c470b263b99, type: 2}
+--- !u!114 &1215677948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2653001356331997809, guid: 2eb9605c80b66ec4c90d2f205771245f,
+    type: 3}
+  m_PrefabInstance: {fileID: 186683220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e209e2f506227a245918dbe54284b6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1221673233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4613,6 +4625,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1005222469590227213, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1215677948}
+    - target: {fileID: 1005222469590227213, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveNW
+      objectReference: {fileID: 0}
     - target: {fileID: 4339012896301312368, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4622,6 +4644,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464270768039709842, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1215677948}
+    - target: {fileID: 4464270768039709842, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveSE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451879494698336782, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1215677948}
+    - target: {fileID: 5451879494698336782, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveNE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171216335417819076, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1215677948}
+    - target: {fileID: 7171216335417819076, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveSW
       objectReference: {fileID: 0}
     - target: {fileID: 8427705784051733146, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
         type: 3}
