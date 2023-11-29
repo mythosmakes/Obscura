@@ -1175,6 +1175,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 7506128398819272460, guid: 549b714b489b1fc4aa957429c47ba065,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c8bff82073481c9478f6f8a01331b2e3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549b714b489b1fc4aa957429c47ba065, type: 3}
 --- !u!4 &712782798 stripped
@@ -3883,6 +3888,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889758829847171157, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a6a37fa0f408140abbebe9c80f8cf5, type: 3}
@@ -7915,7 +7925,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: e35328a91c568cd4ba51a4f9c81c1b12, type: 2}
+      objectReference: {fileID: 2100000, guid: 32927f312a2d35141a7270ab81018d5b, type: 2}
     - target: {fileID: 5866666021909216657, guid: 837830cb1386f4a40b3b5030cafdeaac,
         type: 3}
       propertyPath: m_Controller
