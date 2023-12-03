@@ -631,7 +631,7 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -667,7 +667,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 780733759}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -711,7 +711,7 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: set_cull
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -736,7 +736,7 @@ PrefabInstance:
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.CanvasRenderer, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7149914262431957275, guid: 10ebc6438e5e33344a8b05a857840d99,
         type: 3}
@@ -1794,15 +1794,15 @@ MonoBehaviour:
     Overlapping
     paths are safe.
 
-    Spaces that are on one wall but not the other will slow.
+    Spaces that are on one wall but not the other will not damage
+    you but will change upon stepping on them.
 
-    Spaces
-    not on either path will damage you.
+    Spaces not on either path will
+    damage you.
 
     You start on the diamond space.
 
-    Beware
-    of misdirection.'
+    Beware of misdirection.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 085192dda1b4085489bb316976e1ba6f, type: 2}
   m_sharedMaterial: {fileID: -5706927515747150733, guid: 085192dda1b4085489bb316976e1ba6f,
@@ -1932,7 +1932,7 @@ PrefabInstance:
     - target: {fileID: 2653001356331997814, guid: 2eb9605c80b66ec4c90d2f205771245f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.507
+      value: 16.89
       objectReference: {fileID: 0}
     - target: {fileID: 2653001356331997814, guid: 2eb9605c80b66ec4c90d2f205771245f,
         type: 3}
@@ -2588,7 +2588,7 @@ PrefabInstance:
     - target: {fileID: 4835571299467752190, guid: d1f0506c79780e6479477595d84126b2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.69
+      value: -1.235
       objectReference: {fileID: 0}
     - target: {fileID: 4835571299467752190, guid: d1f0506c79780e6479477595d84126b2,
         type: 3}
@@ -3036,7 +3036,7 @@ PrefabInstance:
     - target: {fileID: 3425621517707862397, guid: 1a3fa814fa51bb942a84df8f580852a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.21
+      value: 22.85
       objectReference: {fileID: 0}
     - target: {fileID: 3425621517707862397, guid: 1a3fa814fa51bb942a84df8f580852a0,
         type: 3}

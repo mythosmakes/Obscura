@@ -732,7 +732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 150}
+  m_AnchoredPosition: {x: -96.3, y: 150}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &176619066
@@ -755,25 +755,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Movement Sequence Continued:
+  m_text: 'Continued:
 
     2 Spaces West
 
     1 Space South
 
-    1
-    Space East
+    1 Space East
 
-    1 Space South
+    1
+    Space South
 
     1 Space East
 
     2 Spaces South
 
-    3 Spaces
-    West
+    3 Spaces West
 
-    2 Spaces North
+    2 Spaces
+    North
 
     3 Spaces West
 
@@ -10175,6 +10175,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8889758829847171157, guid: d3a6a37fa0f408140abbebe9c80f8cf5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a6a37fa0f408140abbebe9c80f8cf5, type: 3}
 --- !u!1 &2029883336 stripped
@@ -14285,13 +14290,13 @@ PrefabInstance:
     - target: {fileID: 5258114292768285898, guid: 837830cb1386f4a40b3b5030cafdeaac,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5258114292768285898, guid: 837830cb1386f4a40b3b5030cafdeaac,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ead0f3c98be51b143a8a9778ee83f619, type: 2}
+      objectReference: {fileID: 2100000, guid: 32927f312a2d35141a7270ab81018d5b, type: 2}
     - target: {fileID: 5258114292768285898, guid: 837830cb1386f4a40b3b5030cafdeaac,
         type: 3}
       propertyPath: m_Materials.Array.data[1]

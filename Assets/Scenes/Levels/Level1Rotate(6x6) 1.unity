@@ -755,7 +755,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Tap on a quadrant of spaces to rotate it 90 degrees clockwise.  You may
-    need to shift quadrants multiple times.  Press the play button to start movement.
+    need to shift quadrants multiple times.  Press the play button to start movement. 
+    Movement happens according to the given instructions.  You can not rotate after
+    starting movement.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 085192dda1b4085489bb316976e1ba6f, type: 2}
   m_sharedMaterial: {fileID: -5706927515747150733, guid: 085192dda1b4085489bb316976e1ba6f,
