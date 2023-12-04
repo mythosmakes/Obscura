@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: fe5de6ae3d3bda046a362aa8a5ea9243
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 43946962da95af247bd0c3f9abc3b0f9
+  - enabled: 1
     path: Assets/Scenes/Levels/LevelStart.unity
     guid: 9bd1d7e91a9af694eb3cf1ab4bce399b
   - enabled: 1
@@ -29,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level5.unity
     guid: a6ebb40cd15c3e142855169f772f427c
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
+    guid: b9396515096c06740b51d1ff08750a97
   - enabled: 1
     path: Assets/Scenes/Levels/Level1Rotate(6x6) 1.unity
     guid: 80facb5e1c10ffb44a3b735893b956be

@@ -54,10 +54,15 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Level5");
     }
+
+    public void LoadOutro()
+    {
+        SceneManager.LoadScene("Outro");
+    }
     
     public void LoadLevelStart()
     {
-        SceneManager.LoadScene("LevelStart");
+        SceneManager.LoadScene("Intro");
     }
 
     public void LoadRotationLevelStart()
