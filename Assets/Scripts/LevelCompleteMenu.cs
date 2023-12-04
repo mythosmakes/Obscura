@@ -33,12 +33,12 @@ public class LevelCompleteMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("From LevelCompleteMenu: " + currencyShop.Coins);
-        for (int i = 0; i < player.shardsCollected; i++)
+        //Debug.Log("From LevelCompleteMenu: " + currencyShop.Coins);
+        for (int i = 0; i < SaveManager.Instance.GetShards(); i++)
         {
             shardIcons[i].gameObject.SetActive(true);
         }
-        for(int i = shardIconShadows.Count-1; i >= player.shardsCollected; i--)
+        for(int i = shardIconShadows.Count-1; i >= SaveManager.Instance.GetShards(); i--)
         {
             shardIconShadows[i].gameObject.SetActive(true);
         }
