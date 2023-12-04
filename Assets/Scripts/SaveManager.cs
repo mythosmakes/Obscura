@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -102,9 +103,41 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    public int GetShards()
+    {
+         switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 3: // level one
+                {
+                    return levelOneShards;
+                }
+            case 4: // level two
+                {
+                    return levelTwoShards;
+                }
+            case 5: // level three
+                {
+                    return levelThreeShards;
+                }
+            case 6: // level four
+                {
+                    return levelFourShards;
+                }
+            case 7: // level five
+                {
+                    return levelFiveShards;
+                }
+            default:
+                {
+                    return 0;
+                }
+        }
+    }
+
     public void SetCoins(int amount)
     {
         totalCoins = amount;
+        Debug.Log("SaveManager: " + totalCoins);
     }
 
     public void SetPlayerMoney(float amount)
