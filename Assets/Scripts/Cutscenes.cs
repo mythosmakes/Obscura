@@ -8,7 +8,7 @@ public class Cutscenes : MonoBehaviour
 {
 	public string sceneName;
 	public VideoPlayer videoPlayer;
-	public float duration;
+	private float duration;
 
 	private void Awake()
 	{

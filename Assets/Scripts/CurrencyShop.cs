@@ -14,20 +14,21 @@ public class CurrencyShop : MonoBehaviour
     public float playerMoney { get; private set; }
     public float Coins { get { return coins; } }
 
+    private SaveManager saveManager;
+
     void Start()
     {
-        
+        saveManager = SaveManager.Instance;
         gameUI.SetActive(true);
         shopUI.SetActive(false);
-        
+        moneyText.text = string.Format("Balance: ${0:F2}", saveManager.totalMoney);
+        coinsText.text = saveManager.totalCoins.ToString();
     }
 
     public void OpenShop()
     {
-        coins = SaveManager.Instance.totalCoins;
-        playerMoney = SaveManager.Instance.totalMoney;
-        moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
-        coinsText.text = coins.ToString();
+        moneyText.text = string.Format("Balance: ${0:F2}", saveManager.totalMoney);
+        coinsText.text = saveManager.totalCoins.ToString();
         gameUI.SetActive(false);
         shopUI.SetActive(true);
     }
@@ -52,11 +53,11 @@ public class CurrencyShop : MonoBehaviour
         {
             cost = 7.99f;
         }
-        
-        if(playerMoney >= cost)
+
+        if(saveManager.totalMoney >= cost)
         {
-            playerMoney -= cost;
-            moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
+            saveManager.totalMoney -= cost;
+            moneyText.text = string.Format("Balance: ${0:F2}", saveManager.totalMoney);
             RewardCoins(addedCoins);
         }
         else
@@ -67,24 +68,21 @@ public class CurrencyShop : MonoBehaviour
 
     public void RewardCoins(int rewardCoins)
     {
-        coins += rewardCoins;
-        coinsText.text = coins.ToString();
-        SaveManager.Instance.SetCoins(coins);
-        Debug.Log(coins);
+        saveManager.totalCoins += rewardCoins;
+        coinsText.text = saveManager.totalCoins.ToString();
+        //Debug.Log(coins);
     }
 
     public void AddMoney()
     {
-        playerMoney += .10f;
-        moneyText.text = string.Format("Balance: ${0:F2}", playerMoney);
-        SaveManager.Instance.SetPlayerMoney(playerMoney);
+        saveManager.totalMoney += .10f;
+        moneyText.text = string.Format("Balance: ${0:F2}", saveManager.totalMoney);
     }
 
     public void SpendCoins(int amount)
     {
-        coins -= amount;
-        coinsText.text = coins.ToString();
-        SaveManager.Instance.SetCoins(coins);
-        Debug.Log(coins);
+        saveManager.totalCoins -= amount;
+        coinsText.text = saveManager.totalCoins.ToString();
+        //Debug.Log(coins);
     }
 }
