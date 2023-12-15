@@ -15,8 +15,8 @@ public class SaveManager : MonoBehaviour
     public int levelFourShards { get; private set; } = 0;
     public int levelFiveShards { get; private set; } = 0;
 
-    public int totalCoins { get; private set; } = 0;
-    public float totalMoney { get; private set; } = 0;
+    public int totalCoins;
+    public float totalMoney;
 
     public bool isPlayingTileRotation { get; private set; } = true;
 
@@ -134,14 +134,14 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void SetCoins(int amount)
-    {
-        totalCoins = amount;
-        Debug.Log("SaveManager: " + totalCoins);
-    }
+    //public void SetCoins(int amount)
+    //{
+    //    totalCoins = amount;
+    //    Debug.Log("SaveManager: " + totalCoins);
+    //}
 
-    public void SetPlayerMoney(float amount)
-    {
-        totalMoney = amount;
-    }
+    //public void SetPlayerMoney(float amount)
+    //{
+    //    totalMoney = amount;
+    //}
 }

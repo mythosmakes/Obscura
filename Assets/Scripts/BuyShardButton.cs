@@ -24,7 +24,7 @@ public class BuyShardButton : MonoBehaviour
     public void BuyShard()
     {
         //Debug.Log("BuyShard() called");
-        if (currencyShop.Coins >= levelCompleteMenu.ShardCost)
+        if (SaveManager.Instance.totalCoins >= levelCompleteMenu.ShardCost)
         {
             //Debug.Log("if statement met");
             currencyShop.SpendCoins(levelCompleteMenu.ShardCost);

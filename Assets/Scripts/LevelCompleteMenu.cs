@@ -63,7 +63,7 @@ public class LevelCompleteMenu : MonoBehaviour
         foreach (TextMeshProUGUI text in buyTexts)
         {
             text.text = shardCost + " coins";
-            if (currencyShop.Coins >= shardCost)
+            if (SaveManager.Instance.totalCoins >= shardCost)
             {
                 text.color = Color.green;
             }
